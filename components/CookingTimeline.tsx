@@ -13,7 +13,7 @@ export const CookingTimeline: React.FC<Props> = ({ events, totalMinutes, languag
   const sortedEvents = [...events].sort((a, b) => a.startTimeOffset - b.startTimeOffset);
 
   // Generate time markers for the graph header
-  const markers = [];
+  const markers: number[] = [];
   const markerCount = 6; // How many time labels to show
   for (let i = 0; i <= markerCount; i++) {
     markers.push(Math.round((totalMinutes / markerCount) * i));
