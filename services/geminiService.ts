@@ -1,6 +1,9 @@
 import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { Recipe, Ingredient, TimelineEvent, MealPlan } from "../types";
 
+// Ensure process.env is defined for TypeScript, even if @types/node is missing or not picked up
+declare const process: { env: Record<string, string | undefined> };
+
 const getAi = (apiKey?: string) => new GoogleGenAI({ apiKey: apiKey || process.env.API_KEY });
 
 // Schemas
